@@ -1,0 +1,13 @@
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.AppleDouble
+.LSOverride
+~$*.psd
+~*.tmp
+__pycache__/
+*.py[cod]
+*.log
+*.sqlite
