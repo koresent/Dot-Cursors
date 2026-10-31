@@ -199,7 +199,8 @@ def pack_xcursor(images, hotspot=(16, 16), delay=50):
         chunks.append(chunk_data)
         current_offset += len(chunk_data)
 
-    file_header = struct.pack("<4I", 0x58637572, 16, 0x00010000, ntoc)
+    # 16 bytes file header: magic ('Xcur' / 0x72756358 LSBFirst), header_size (16), version (0x00010000), ntoc
+    file_header = b"Xcur" + struct.pack("<3I", 16, 0x00010000, ntoc)
     return file_header + b"".join(toc_entries) + b"".join(chunks)
 
 
